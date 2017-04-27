@@ -29,20 +29,20 @@ public class AddBusAction extends Action {
 		if (session != null) {
 			System.out.println("session is not null");
 			
-			BusForm bus = new BusForm();
+			BusForm bus = ((BusForm) form);
 
 			
-
-			bus.setBusName(((BusForm) form).getBusName());
-			bus.setBusNumber(((BusForm) form).getBusNumber());
+/*
+			bus.setBusName(bus.getBusName());
+			bus.setBusNumber(bus.getBusNumber());
 			bus.setNumberOfSeats(40);
-			bus.setBusType(((BusForm) form).getBusType());
+			bus.setBusType(bus.getBusType());*/
 			
 		
-			System.out.println(((BusForm) form).getBusName());
-			System.out.println(((BusForm) form).getBusNumber());
+			System.out.println(bus.getBusName());
+			System.out.println(bus.getBusNumber());
 
-			System.out.println(((BusForm) form).getBusType());
+			System.out.println(bus.getBusType());
 
 			BusModal newBus = new BusModal();
 			ServletContext context = request.getServletContext();
@@ -51,7 +51,6 @@ public class AddBusAction extends Action {
 			if (result) {
 				List<BusForm> list = new ArrayList<BusForm>();
 				list = newBus.getBusDetails(connection);
-				bus = (BusForm) form;
 				bus.setList(list);
 				System.out.println("LIST");
 				return mapping.findForward("success");

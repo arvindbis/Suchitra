@@ -41,8 +41,9 @@ public class BusSearchAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		System.out.println("BusSearchAction");
-		System.out.println(request.getParameter("fromAddress"));
-		System.out.println(request.getParameter("toAddress"));
+		BusForm busForm = ((BusForm) form);
+		System.out.println(busForm.getFromAddress());
+		System.out.println(busForm.getToAddress());
 		System.out.println(request.getParameter("traveldate"));
 		String fromAddress=request.getParameter("fromAddress");
 		String toAddress=request.getParameter("toAddress");
@@ -96,7 +97,7 @@ public class BusSearchAction extends Action {
 				 System.out.println(iterator.next().toString());
 			 }
 			 request.setAttribute("foundbusdetails", busDetails);
-			 BusForm busForm = (BusForm) form;
+			
 			 busForm.setFoundbusdetails(busDetails);
 		return mapping.findForward("success");
 	}

@@ -27,21 +27,21 @@ public class DeleteBusInfoAction extends Action {
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-
+		BusForm bus = (BusForm) form;
 		BusModal busModal = new BusModal();
 		ServletContext context = request.getServletContext();
 		Connection connection = (Connection) context.getAttribute("connection");
 
 		System.out.println("in DeleteBusInfoAction");
-		System.out.println("selectedbusnumber" + request.getParameter("busNumber"));
+		System.out.println("selectedbusnumber" +bus.getBusNumber());
 
-		boolean result = busModal.deleteBusDetails(connection, request.getParameter("busNumber"));
+		boolean result = busModal.deleteBusDetails(connection,bus.getBusNumber());
 
 		List<BusForm> list = new ArrayList<BusForm>();
 		list = busModal.getBusDetails(connection);
 
 		request.setAttribute("list", list);
-		BusForm bus = (BusForm) form;
+	
 		bus.setList(list);
 		if (result) {
 			return mapping.findForward("succ");

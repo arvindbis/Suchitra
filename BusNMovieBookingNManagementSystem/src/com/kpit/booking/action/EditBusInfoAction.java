@@ -35,15 +35,15 @@ public class EditBusInfoAction extends Action {
 		BusForm bus = (BusForm) form;
 
 		System.out.println("in EditBusInfoAction");
-		System.out.println("bus number(edit)" + request.getParameter("busNumber"));
-		System.out.println("bus name(edit)" + request.getParameter("busName"));
-		System.out.println("bus numberOfSeats(edit)" + request.getParameter("numberOfSeats"));
-		System.out.println("busType(edit)" + request.getParameter("busType"));
+		System.out.println("bus number(edit)" + bus.getBusNumber());
+		System.out.println("bus name(edit)" + bus.getBusName());
+		System.out.println("bus numberOfSeats(edit)" + bus.getNumberOfSeats());
+		System.out.println("busType(edit)" +bus.getBusType());
 
-		bus.setBusName(request.getParameter("busName"));
+		/*bus.setBusName(request.getParameter("busName"));
 		bus.setBusNumber(request.getParameter("busNumber"));
 		bus.setBusType(request.getParameter("busType"));
-		bus.setNumberOfSeats(40);
+		bus.setNumberOfSeats(40);*/
 		BusModal busModel = new BusModal();
 
 		boolean result = busModel.editBusDetails(connection, bus);
