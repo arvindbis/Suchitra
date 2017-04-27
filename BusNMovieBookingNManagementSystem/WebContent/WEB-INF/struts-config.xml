@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<form-beans>
+		<form-bean name="userForm" type="com.kpit.booking.form.UserForm" />
+		<form-bean name="businfoaddForm" type="com.kpit.booking.form.BusForm" />
+		<form-bean name="registrationform" type="com.kpit.booking.form.UserRegistrationForm" />
+	 	<form-bean name="passengerForm" type="com.kpit.booking.form.PassengerForm" />
+	</form-beans>
+
+	<action-mappings>
+
+		<action path="/login" type="com.kpit.booking.action.UserAction"
+			name="userForm" input="/jsp/login.jsp">
+			<forward name="admin" path="/jsp/admin.jsp" />
+			<forward name="otheruser" path="/jsp/otheruser.jsp" />
+			<forward name="failure" path="/jsp/failure.jsp" />
+		</action>
+
+
+		<!-- <action path="/busdetails" forward="/jsp/busdetails.jsp" /> -->
+		<action path="/moviedetails" forward="/jsp/moviedetails.jsp" />
+
+
+		<action path="/newbusdetails" type="com.kpit.booking.action.AddBusAction"
+			name="businfoaddForm" input="/jsp/addbusdetails.jsp">
+			<!-- to do -->
+			<forward name="success" path="/jsp/busdetails.jsp" />
+			<forward name="failure" path="/jsp/busdetailsfailure.jsp" />
+		</action>
+
+		<action path="/addbusdetails" forward="/jsp/addbusdetails.jsp" />
+		
+		<!-- doing -->
+		<action path="/busdetails" type="com.kpit.booking.action.BusInfoAction"
+			name="businfoaddForm" input="/jsp/busdetails.jsp">
+			
+			<forward name="buslist" path="/jsp/busdetails.jsp" />
+			
+		</action>
+		
+		
+		<!-- <action path="/deletebusdetails" forward="/jsp/deletebusdetails.jsp" /> -->
+		<action path="/editbusdetails" forward="/jsp/editbusdetails.jsp" />
+		<action path="/registration" forward="/jsp/registrationform.jsp" />
+		
+		<action path="/registrationform" type="com.kpit.booking.action.UserRegistrationAction"
+			name="registrationform" input="/jsp/registrationform.jsp">
+			<forward name="success" path="/jsp/success.jsp" />
+			<forward name="failure" path="/jsp/failure.jsp" />
+		</action>
+
+
+	<action path="/deletebusaction" type="com.kpit.booking.action.DeleteBusInfoAction" 
+	name="businfoaddForm" input="/jsp/deletebusdetails.jsp">
+			<forward name="succ" path="/jsp/busdetails.jsp" />
+			<forward name="fail" path="/jsp/failureinbusservices.jsp" />
+		</action>
+		
+
+
+<!-- 	for edit bus information -->
+	 <action path="/editbusdetails" type="com.kpit.booking.action.EditBusInfoAction" 
+	name="businfoaddForm" input="/jsp/editbusdetails.jsp">
+			<forward name="success" path="/jsp/busdetails.jsp" />
+			<forward name="failure" path="/jsp/failureinbusservices.jsp" />
+		</action>
+
+
+	
+		
+		
+		
+		
+	<!-- FOR NORMAL USER -->
+	<action path="/busbook" forward="/jsp/busbooking.jsp" />
+	<action path="/moviebook" forward="/jsp/moviebooking.jsp" />
+	
+	<action path="/busSearch" type="com.kpit.booking.action.BusSearchAction"
+		name="businfoaddForm">
+		<forward name="success" path="/jsp/foundbusdetails.jsp"></forward>
+	</action>
+	
+	<action path="/viewSeat" type="com.kpit.booking.action.ViewSeatAction"
+		name="businfoaddForm">
+		<forward name="success" path="/jsp/seats.jsp" />
+    </action>
+	
+	<action path="/seatBooking" type="com.kpit.booking.action.SeatBookingAction"
+		name="businfoaddForm">
+		<forward name="passengers" path="/jsp/passengerdetails.jsp"></forward>
+	</action>
+	
+	<action path="/passengerDetails" type="com.kpit.booking.action.PassengerDetailsAction"
+		name="passengerForm">
+		<forward name="success" path="/jsp/passengerdetails.jsp"></forward>
+	</action>
+
+	
+
+	</action-mappings>
+
+
+	<!-- FOR LOCALIZATION -->
+	<message-resources parameter="com.kpit.booking.bundle.user" />
+
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml, /WEB-INF/validator-user.xml" />
+
+	</plug-in>
+
+
+
+</struts-config>

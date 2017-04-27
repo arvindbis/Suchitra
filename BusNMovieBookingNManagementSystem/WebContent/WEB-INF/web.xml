@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>BusNMovieBookingNManagementSystem</display-name>
+
+	<!-- <filter> <filter-name>Filter</filter-name> <filter-class>com.kpit.booking.filter.FilterUser</filter-class> 
+		</filter> <filter-mapping> <filter-name>Filter</filter-name> <url-pattern>/*</url-pattern> 
+		<dispatcher>INCLUDE</dispatcher> </filter-mapping> -->
+
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+
+		<init-param>
+			<param-name>config</param-name>
+			<param-value> /WEB-INF/struts-config.xml </param-value>
+		</init-param>
+
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>logout</servlet-name>
+		<servlet-class>com.kpit.booking.controller.LogoutServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>logout</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>busSearch</servlet-name>
+		<servlet-class>com.kpit.booking.action.BusSearchAction</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>busSearch</servlet-name>
+		<url-pattern>/busSearch</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>jsp/login.jsp</welcome-file>
+	</welcome-file-list>
+
+	<listener>
+		<listener-class>com.kpit.booking.listener.ConnectionListener</listener-class>
+	</listener>
+
+
+
+
+	<!-- ####################################### -->
+
+
+
+	<!-- servlet definition -->
+	<servlet>
+		<servlet-name>ErrorHandler</servlet-name>
+		<servlet-class>com.kpit.booking.controller.ErrorHandler</servlet-class>
+	</servlet>
+	<!-- servlet mappings -->
+	<servlet-mapping>
+		<servlet-name>ErrorHandler</servlet-name>
+		<url-pattern>/ErrorHandler</url-pattern>
+	</servlet-mapping>
+
+	<!-- error-code related error pages -->
+	<!-- <error-page> <error-code>404</error-code> <location>/ErrorHandler</location> 
+		</error-page> <error-page> <error-code>403</error-code> <location>/ErrorHandler</location> 
+		</error-page> -->
+	<error-page>
+		<error-code>500</error-code>
+		<location>/ErrorHandler</location>
+	</error-page>
+
+	<!-- exception-type related error pages -->
+	<error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>/ErrorHandler</location>
+	</error-page>
+
+
+
+
+</web-app>

@@ -1,0 +1,86 @@
+@CHARSET "ISO-8859-1";
+
+img {
+	height: 70px;
+	width: 100px;
+}
+
+body {
+	background-color: lightblue;
+}
+
+#mainheading {
+	color: blue;
+	font-size: 20pt;
+}
+
+#logoutbutton {
+	color: #008000;
+	font-size: 13pt;
+	margin-left: 100pt;
+	font: normal;
+	background-color: lightblue;
+}
+
+#headerdetails {
+	float: left;
+	list-style-type: none;
+	margin-left: 15em;
+}
+
+.kpitimg {
+	margin-left: 5em;
+}
+
+#loginform {
+	margin-top: 100pt;
+	margin-left: 300pt;
+	border: 2px solid;
+	border-radius: 25px;
+	margin-right: 400pt;
+	padding-left: 40pt;
+	padding-right: 50pt;
+	background-color: #408080;
+}
+
+#loginsubmitbutton {
+	margin-left: 100pt;
+	margin-bottom: 20pt;
+}
+
+#registerbutton {
+	margin-left: 440pt;
+}
+
+#registrationform {
+	margin-top: 100pt;
+	margin-left: 300pt;
+	border: 2px solid;
+	border-radius: 25px;
+	margin-right: 350pt;
+	padding-left: 40pt;
+	padding-right: 50pt;
+}
+
+#registersubmitbutton {
+	margin-left: 100pt;
+	margin-bottom: 20pt;
+}
+
+#invalidbn {
+	color: red;
+}
+
+#registrationpassword {
+	margin-left: 78pt;
+}
+
+#rregistrationpassword {
+	margin-left: 15pt;
+}
+
+#registrationsuccess {
+	color: green;
+	font-size: 20pt;
+	margin-left: 300pt;
+}
