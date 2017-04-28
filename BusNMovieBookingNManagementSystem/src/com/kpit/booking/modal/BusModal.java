@@ -273,7 +273,31 @@ public class BusModal {
 		}
 		return seats;
 	}
-
+	public int getnoofMaleSeat(Connection connection,String busNumber, Date date){
+		PreparedStatement preparedStatement;
+		List<String> seats=new ArrayList<String>();
+		System.out.println("Dateeeeeeeeeeeee"+date);
+		try {
+			preparedStatement = connection.prepareStatement(
+					"SELECT seat_number FROM seat_allocation WHERE bus_number=? and DATE=? and PID IN (SELECT PID FROM passenger_details WHERE gender='MALE');");
+			preparedStatement.setString(1, busNumber);
+			java.sql.Date travelingDate = new java.sql.Date(date.getTime());
+		
+			preparedStatement.setDate(2, travelingDate);
+			ResultSet rs = preparedStatement.executeQuery();
+			while(rs.next()){
+				seats.add(rs.getString("seat_number"));
+			}
+			System.out.println("SEAT SIZE"+seats.size());
+			
+			
+			System.out.println("FEMALE SEATS"+seats);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return seats.size();
+	}
 	public List<Integer> addPassengerDetails(Connection connection, String busno, Date travelDate, List<PassengerForm> passengers) {
 		PreparedStatement preparedStatement;
 		PreparedStatement preparedStatementforPid;
@@ -351,6 +375,8 @@ public class BusModal {
 			}
 		}
 	}
+
+	
 	
 	
 	

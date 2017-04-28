@@ -5,10 +5,11 @@
 <%@taglib prefix="logic" uri="http://struts.apache.org/tags-logic"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page import ="java.util.*" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+ 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
@@ -16,11 +17,18 @@
 </head>
 <body>
 <form >
-<input type="hidden" name="countofFemaleSeats" value="${countofFemaleSeats}" /> 
+<input type="hidden"  name="countofFemaleSeats" value="${totalSeats}" /> 
 <%int iter=0;%>
 <c:forEach items="${femaleSeats}" var="bean" >
           								
-               <input type="hidden" name="femaleseatss<%=iter%>" value="<c:out value="${bean}" />">  
+               <input type="hidden" name="seatss<%=iter%>" value="<c:out value="${bean}" />">  
+              
+              <%iter++;%>
+       
+        </c:forEach>
+        <c:forEach items="${maleSeats}" var="bean" >
+          								
+               <input type="hidden" name="seatss<%=iter%>" value="<c:out value="${bean}" />">  
               
               <%iter++;%>
        

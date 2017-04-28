@@ -43,7 +43,7 @@ public class ViewSeatAction extends Action{
 		ServletContext context=request.getServletContext();
 		context.setAttribute("busno", busNumber);
 		context.setAttribute("travelDate", date);
-		
+		List<String> totalSeatsList=new ArrayList<String>();
 		
 		
 		
@@ -56,9 +56,19 @@ public class ViewSeatAction extends Action{
 		request.setAttribute("countofFemaleSeats", countofFemaleSeats);
 		femaleSeats=bus.getFemaleSeatNumbers(connection, busNumber,date);
 		System.out.println("femaleseatsfromdao "+request.getAttribute("femaleseatsfromdao"));
-		List<String> maleSeats=new ArrayList<String>();
-		maleSeats=bus.getMaleSeatNumbers(connection, busNumber,date);
 		
+		List<String> maleSeats=new ArrayList<String>();
+		int countofMaleSeats=bus.getnoofMaleSeat(connection, busNumber, date);
+		maleSeats=bus.getMaleSeatNumbers(connection, busNumber,date);
+		int totalSeats=countofMaleSeats+countofFemaleSeats;
+		System.out.println("totalSeats :"+totalSeats);
+		request.setAttribute("totalSeats", totalSeats);
+		
+		totalSeatsList=bus.getFemaleSeatNumbers(connection, busNumber,date);
+		totalSeatsList.addAll(bus.getMaleSeatNumbers(connection, busNumber,date));
+		
+		
+		System.out.println(totalSeatsList);
 		Iterator<String> it=femaleSeats.iterator();
 		System.out.println("Female Seats");
 		while(it.hasNext()){

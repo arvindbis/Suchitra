@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <%@taglib prefix="html" uri="http://struts.apache.org/tags-html"%>
-
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 <title>Insert title here</title>
 </head>
 <body>
