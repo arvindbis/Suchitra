@@ -22,6 +22,7 @@ public class BusInfoAction extends Action{
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
+		System.out.println("SYSOUT SYSOUT");
 		HttpSession session=request.getSession(false);
 		if(session!=null){
 		BusModal newBus=new BusModal();

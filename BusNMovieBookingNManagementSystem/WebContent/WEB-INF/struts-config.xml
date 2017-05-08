@@ -37,8 +37,8 @@
 		
 		<!-- doing -->
 		<action path="/busdetails" type="com.kpit.booking.action.BusInfoAction"
-			name="businfoaddForm" input="/jsp/busdetails.jsp">
-			
+			name="businfoaddForm" >
+			<!-- input="/jsp/busdetails.jsp" -->
 			<forward name="buslist" path="/jsp/busdetails.jsp" />
 			
 		</action>
@@ -82,6 +82,7 @@
 	
 	<action path="/busSearch" type="com.kpit.booking.action.BusSearchAction"
 		name="businfoaddForm">
+		<forward name="failure" path="/jsp/busnotfound.jsp"></forward>
 		<forward name="success" path="/jsp/foundbusdetails.jsp"></forward>
 	</action>
 	
@@ -106,13 +107,13 @@
 
 
 	<!-- FOR LOCALIZATION -->
-	<message-resources parameter="com.kpit.booking.bundle.user" />
+	 <message-resources parameter="com.kpit.booking.bundle.user" />
 
-	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+	<!--<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
 		<set-property property="pathnames"
 			value="/WEB-INF/validator-rules.xml, /WEB-INF/validator-user.xml" />
 
-	</plug-in>
+	</plug-in> -->
 
 
 

@@ -47,7 +47,7 @@
 				</var>
 			</field>
 		</form>
-		<!-- for adding new bus information to database -->
+<!-- 		 for adding new bus information to database  -->
 		<form name="businfoaddForm">
 			<field property="busName" depends="required">
 				<msg name="required" key="err.addbusname.required" />
@@ -61,21 +61,21 @@
 				</var>
 			</field>
 		
-			<!-- <field property="fromAddress" depends="required">
+			<field property="fromAddress" depends="required">
 				<msg name="required" key="err.fromAddress.required" />
 			</field>
 			<field property="toAddress" depends="required">
 				<msg name="required" key="err.toAddress.required" />
 			</field>
-			<field property="departureTime" depends="required,mask">
+			<!-- <field property="departureTime" depends="required,mask">
 				<msg name="required" key="err.departureTime.required" />
 				<msg name="mask" key="err.time.mask"/>
 				<var>
 					<var-name>mask</var-name>
 					<var-value>^[0-9][0-9]\.[0-9][0-9]$</var-value>
 				</var>
-			</field>
-			<field property="arrivalTime" depends="required,mask">
+			</field> -->
+			<!-- <field property="arrivalTime" depends="required,mask">
 				<msg name="required" key="err.arrivalTime.required" />
 				<msg name="mask" key="err.time.mask"/>
 				<var>

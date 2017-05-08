@@ -9,7 +9,7 @@ import org.apache.struts.action.ActionForm;
  * @author suchitras
  *
  */
-public class UserForm extends /*ValidatorForm*/ ActionForm{
+public class UserForm extends /*ValidatorForm */ActionForm{
 
 	/**
 	 * 

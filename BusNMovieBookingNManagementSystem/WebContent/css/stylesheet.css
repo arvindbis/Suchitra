@@ -6,26 +6,31 @@ img {
 }
 
 body {
-	background-color: lightblue;
+	color: white;
+	background-image: url("../images/redbackgroundimage.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 
 #mainheading {
 	color: blue;
 	font-size: 20pt;
+	margin-left: 50pt;
 }
 
 #logoutbutton {
-	color: #008000;
+	color: rgb(255, 0, 0);
 	font-size: 13pt;
-	margin-left: 100pt;
-	font: normal;
-	background-color: lightblue;
+	margin-left: 0pt;
+	font: serif;
+	background-color: rgba(244, 125, 54, 0.95);
 }
 
 #headerdetails {
 	float: left;
 	list-style-type: none;
 	margin-left: 15em;
+	color: white;
 }
 
 .kpitimg {
@@ -33,14 +38,16 @@ body {
 }
 
 #loginform {
-	margin-top: 100pt;
+	margin-top: 80pt;
 	margin-left: 300pt;
 	border: 2px solid;
 	border-radius: 25px;
 	margin-right: 400pt;
 	padding-left: 40pt;
 	padding-right: 50pt;
-	background-color: #408080;
+	background-color: rgba(255, 0, 0, 0);
+	color: black;
+	opacity: 1.0;
 }
 
 #loginsubmitbutton {
@@ -53,18 +60,23 @@ body {
 }
 
 #registrationform {
-	margin-top: 100pt;
+	margin-top: 80pt;
 	margin-left: 300pt;
 	border: 2px solid;
 	border-radius: 25px;
 	margin-right: 350pt;
 	padding-left: 40pt;
 	padding-right: 50pt;
+	color: black;
+	background-color: rgba(255, 0, 0, 0);
+	opacity: 1.0;
 }
 
 #registersubmitbutton {
 	margin-left: 100pt;
 	margin-bottom: 20pt;
+	color: white;
+	background-color: rgba(255, 118, 0, 0.18);
 }
 
 #invalidbn {
@@ -83,4 +95,98 @@ body {
 	color: green;
 	font-size: 20pt;
 	margin-left: 300pt;
+}
+
+#registerbutton {
+	color: white;
+}
+
+#mainheading {
+	color: white;
+}
+
+#psid {
+	margin-left: 3pt;
+}
+
+img {
+	height: 180pt;
+	width: 250pt;
+}
+/* ADMIN SIDE CSS */
+#services {
+	float: left;
+	list-style-type: none;
+	margin-left: 150pt;
+}
+
+#capsrvices {
+	float: left;
+	list-style-type: none;
+	font: 60pt;
+	color: #ffffff;
+	padding-left: 230pt;
+}
+
+.movieServiceCaption {
+	margin-left: 110pt;
+}
+
+#greet {
+	margin-left: 370pt;
+}
+
+#adminsidebusdetails {
+	margin-left: 300pt;
+}
+
+#addBusButton {
+	margin-left: 450pt;
+	color: white;
+	background-color: red;
+}
+
+#deletebusform {
+	margin-left: 350pt;
+	border-radius: 25px;
+}
+
+#deletebuutton {
+	margin-left: 80pt;
+	color: white;
+	background-color: rgba(255, 118, 0, 0.18);
+}
+
+#editebusform {
+	margin-left: 350pt;
+	border-radius: 25px;
+}
+#buseditformheading{
+	margin-left: 50pt;
+}
+#editbuutton {
+	margin-left: 80pt;
+	color: white;
+	background-color: rgba(255, 118, 0, 0.18);
+}
+#addbusformheading{
+	margin-left: 400pt;
+}
+#addbusform{
+	margin-left: 350pt;
+	border-radius: 25px;
+}
+#idfornewbusname{
+	margin-left: 22pt;
+}
+#idfornewbusnumber{
+	 margin-left: 12pt;
+}
+#idfornewbustype{
+	margin-left: 27pt;
+}
+#idfornewbussubmit{
+	margin-left: 71pt;
+	color: white;
+	background-color: rgba(255, 118, 0, 0.18);
 }

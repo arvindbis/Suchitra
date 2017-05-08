@@ -21,17 +21,18 @@
 <br><br><br><br><br><br>
 
 	<br>
-	<br>
+	
 	<font color="red"> <html:errors />
 	</font>
-	<html:form action="/newbusdetails">
+	<h4 id="addbusformheading">Add Bus Form</h4><br>
+	<html:form action="/newbusdetails" styleId="addbusform">
 		<bean:message key="label.addbus.busname" /> : 
-<html:text property="busName" size="20" />
+<html:text property="busName" size="20" styleId="idfornewbusname"/>
 
 		<br>
 		<br>
 		<bean:message key="label.addbus.busnumber" /> : 
-<html:text property="busNumber" size="20" />
+<html:text property="busNumber" size="20" styleId="idfornewbusnumber" />
 		<br>
 		<br>
 
@@ -41,14 +42,15 @@
 		<br>
 		<br> --%>
 		<bean:message key="label.addbus.bustype" /> : 
-<html:select property="busType">
+<html:select property="busType" styleId="idfornewbustype">
 			<html:option value="A/c Seater">A/c Seater</html:option>
 			<html:option value="Non A/c Seater">Non A/c Seater</html:option>
 			
 		</html:select>
 		<br>
 		<br>
-		<html:submit>
+		<br>
+		<html:submit styleId="idfornewbussubmit">
 			<bean:message key="label.addbus.save" />
 		</html:submit>
 	</html:form>

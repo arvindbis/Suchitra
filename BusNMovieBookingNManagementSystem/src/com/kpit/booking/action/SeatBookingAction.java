@@ -1,8 +1,6 @@
 package com.kpit.booking.action;
 
-import java.sql.Connection;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -14,9 +12,6 @@ import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-
-import com.kpit.booking.form.BusForm;
-import com.kpit.booking.modal.BusModal;
 
 public class SeatBookingAction extends Action{
 	@Override
@@ -32,7 +27,7 @@ public class SeatBookingAction extends Action{
 			System.out.println(request.getParameter(seatnumber));
 			seatNumbers.add(request.getParameter(seatnumber));
 		}
-		BusModal bus=new BusModal();
+		
 		System.out.println("NO OF SEAT SELECTED BY USER: "+noofseatsinString);
 		/*String[] selectedSeats=new String[40];*/
 		List<String> selectedSeats=new ArrayList<String>();

@@ -27,7 +27,7 @@
 		<br />
 		<br />
 		<bean:message key="label.user.password" /> : 
-		<html:password property="password" size="20"></html:password>
+		<html:password property="password" size="20" styleId="psid"></html:password>
 		<br />
 		<br />
 		<html:submit styleId="loginsubmitbutton">

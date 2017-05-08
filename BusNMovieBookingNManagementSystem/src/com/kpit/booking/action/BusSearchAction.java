@@ -99,6 +99,9 @@ public class BusSearchAction extends Action {
 			 request.setAttribute("foundbusdetails", busDetails);
 			
 			 busForm.setFoundbusdetails(busDetails);
+			 if(busNumbers.isEmpty()){
+				 return mapping.findForward("failure");
+			 }
 		return mapping.findForward("success");
 	}
 	

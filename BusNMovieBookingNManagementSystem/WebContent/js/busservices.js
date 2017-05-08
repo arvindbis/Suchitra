@@ -3,7 +3,7 @@ $(document).ready(function() {
 	$("#editebusform").hide();
 
 	$("input[type='radio'][name='deletebusinfo']").change(function() {
-		
+		$("#editebusform").hide();
 		var radio = $(this).closest("tr");
 		$("#deletebusform").show();
 		
@@ -14,7 +14,7 @@ $(document).ready(function() {
 		
 	})
 	$("input[type='radio'][name='editbusinfo']").change(function() {
-		
+		$("#deletebusform").hide();
 		var radio = $(this).closest("tr");
 		$("#editebusform").show();
 		

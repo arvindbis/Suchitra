@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.apache.struts.action.ActionForm;
 
-public class BusForm extends /*ValidatorForm */ActionForm{
+public class BusForm extends /*ValidatorForm*/ ActionForm{
 	@Override
 	public String toString() {
 		return "BusForm [busNumber=" + busNumber + ", busName=" + busName + ", numberOfSeats=" + numberOfSeats
@@ -37,6 +37,8 @@ public class BusForm extends /*ValidatorForm */ActionForm{
 	private String toAddress;
 	private String[] seatNumbers;
 	private String femaleSeats;
+    
+	
 	public String getFemaleSeatNumbers() {
 		return femaleSeats;
 	}

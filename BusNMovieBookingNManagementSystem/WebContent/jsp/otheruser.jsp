@@ -10,7 +10,7 @@
 </head>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
-Normal User
+
 Welcome emailId: <%=request.getSession().getAttribute("username")%><br>
 <html:link action="/busbook" > Bus Services</html:link><br><br>
 <html:link action="/moviebook" > Movie Services</html:link><br><br>

@@ -18,9 +18,15 @@
 <li id="headerdetails"><b id="mainheading">Bus and Movie Ticket Booking and Management System</b></li>
 <li id="headerdetails"><form action="logout"><button id="logoutbutton">logout</button></form></li>
 </ul>
-<p>Welcome Admin!....           your emailId:<%=request.getSession().getAttribute("username")%></p>
-<br><br>
-<html:link action="/busdetails" > Bus Services</html:link><br><br>
-<html:link action="/moviedetails" > Movie Services</html:link><br><br>
+<p id="greet"><br><br><br><br>Welcome Admin!....           your emailId : <%=request.getSession().getAttribute("username")%></p>
+<br><br><br>
+<ul > 
+<li id="services"><html:link action="/busdetails" ><img alt="busServices" src="images/busimage.jpg"></html:link><br><br></li>
+<li id="services"><html:link action="/moviedetails" ><img alt="movieServices" src="images/movieimage.jpg"></html:link><br><br></li>
+</ul>
+<ul>
+<li id="capsrvices"><html:link action="/busdetails" >Bus Services</html:link></li>
+<li id="capsrvices" class="movieServiceCaption"><html:link action="/moviedetails" >Movie Services</html:link></li>
+</ul>
 </body>
 </html>

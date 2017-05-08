@@ -16,8 +16,8 @@
 </head>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
-<html:link action="/addbusdetails" > <button>Add Bus</button></html:link>
-<table border="1">
+<html:link action="/addbusdetails" > <button id="addBusButton">Add New Bus</button></html:link><br><br>
+<table border="1" id="adminsidebusdetails">
 		<tr>
 			<th>Bus Name</th>
 			<th>Bus Number</th>
@@ -40,7 +40,7 @@
 			</logic:iterate> 
 	</table>
 
-
+	<br><br>
 	<html:form action="deletebusaction" styleId="deletebusform">
 
 		<table border="1" cellpadding="5">
@@ -49,13 +49,14 @@
 				<td><html:text property="busNumber" readonly="true" /></td>
 			</tr>
 		</table>
-		<input type="submit" value="delete" class="submits" />
+		<br>
+		<input type="submit" value="delete" class="submits" id="deletebuutton"/>
 	</html:form>
 	
 	
 	<!-- EDIT BUS INFORMATION FORM -->
 	<html:form action="editbusdetails"  styleId="editebusform">
-			<h3>Bus Edit Form:</h3>
+			<h3 id="buseditformheading">Bus Edit Form:</h3>
 			<table border="1" cellpadding="5">
 				
 				<tr>
@@ -80,7 +81,8 @@
 						</html:select></td>
 				</tr>
 			</table>
-			<input type="submit" value="update" class="submits"/>
+			<br>
+			<input type="submit" value="update" class="submits" id="editbuutton"/>
 	 </html:form> 
 
 

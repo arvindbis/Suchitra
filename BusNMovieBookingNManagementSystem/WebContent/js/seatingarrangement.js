@@ -10,8 +10,9 @@ $(document).ready(function() {
 			var value = "seatss" + iter;
 			console.log(value);
 			existSeat[i++] = $("input[type='hidden'][name='" + value + "']").val();
-			/*$(existSeat[i]).css('background-color', 'blue');*/
+			$(existSeat[i]).css('background-color', 'blue');
 			/*$("table tr").find("td").css('background-color','blue');*/
+			    
 	}
 	console.log("existSeat"+i);
 	for(var iter1=0;iter1<i;iter1++){
