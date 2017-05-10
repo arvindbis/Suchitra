@@ -1,4 +1,14 @@
-$(document).ready(function() {
+$(document).ready(function() { 
+	/*
+	function preventBack(){window.history.forward();}
+    setTimeout("preventBack()", 0);
+    window.onunload=function(){null};
+    
+	
+	window.location.hash="no-back-button";
+	window.location.hash="Again-No-back-button";//again because google chrome don't insert first hash into history
+	window.onhashchange=function(){window.location.hash="no-back-button";}
+	*/
 	$("#deletebusform").hide();
 	$("#editebusform").hide();
 

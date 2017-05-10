@@ -4,8 +4,9 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+<script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+<script type="text/javascript" src="js/disablebrowserbackbutton.js"></script>
 </head>
-<%-- <jsp:include page="header.jsp"></jsp:include> --%>
 <body>
 <br>
 <ul>
@@ -15,7 +16,7 @@
 
 </ul>
 <br><br><br><br><br><br>
-	<font color="red"> <html:errors />
+	<font id="errormsg" color="white"> <html:errors />
 	</font>
 
 	<html:form action="/login" styleId="loginform">

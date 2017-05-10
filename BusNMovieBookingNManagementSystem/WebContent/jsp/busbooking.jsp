@@ -8,12 +8,12 @@
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 <title>Insert title here</title>
 <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+<script type="text/javascript" src="js/disablebrowserbackbutton.js"></script>
 <script type="text/javascript" src="js/searchbus.js"></script>
 </head>
+<jsp:include page="header.jsp"></jsp:include>
 <body>
-
-
-<html:form action="busSearch" >
+<html:form action="busSearch" styleId="busbookingform">
 
 		<table border="1" cellpadding="5">
 			<tr>
@@ -32,7 +32,8 @@
 				<td><input type="date" name="traveldate" required class="min-today" id="min" data-date-split-input="true"/></td>
 			</tr>
 		</table>
-		<input type="submit" value="search"  />
+		<br>
+		<input type="submit" value="search" id="bussearchbutton" />
 	</html:form>
 
 </body>

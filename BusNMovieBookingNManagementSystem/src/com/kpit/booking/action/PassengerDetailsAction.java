@@ -71,7 +71,7 @@ public class PassengerDetailsAction extends Action{
 	Date date=(Date) context.getAttribute("travelDate");
 	System.out.println(busnumber+"      busnumber date    "+date);
 	System.out.println(list);
-	bus.addSeatNumbers(connection,busno,list,pid,date);
+	boolean value=bus.addSeatNumbers(connection,busno,list,pid,date);
 	
 	
 	
@@ -81,7 +81,10 @@ public class PassengerDetailsAction extends Action{
 	}*/
 	/*BusForm busForm = (BusForm) form;
 	busForm.setSeatNumbers(selectedSeats);*/
-	
-		return super.execute(mapping, form, request, response);
+	if(value){
+		return mapping.findForward("success");
+	}
+	else
+		return mapping.findForward("failure");
 	}
 }

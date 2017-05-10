@@ -10,8 +10,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+<script type="text/javascript" src="js/disablebrowserbackbutton.js"></script>
 <script type="text/javascript" src="js/searchbus.js"></script>
 </head>
+<jsp:include page="header.jsp"></jsp:include>
 <body>
 <table border="1" id="viewseat" >
 		<tr>
@@ -45,8 +47,8 @@
 				<td>Bus Number</td>
 				<td><html:text property="busNumber" readonly="true" /></td>
 			</tr>
-		</table>
-		<input type="submit" value="View seat"  />
+		</table><br>
+		<input type="submit" value="View seat"  id="viewseatbutton"/>
 	</html:form>
 </body>
 </html>

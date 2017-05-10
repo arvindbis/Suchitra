@@ -7,12 +7,21 @@
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+<script type="text/javascript" src="js/disablebrowserbackbutton.js"></script>
 </head>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
 
-Welcome emailId: <%=request.getSession().getAttribute("username")%><br>
-<html:link action="/busbook" > Bus Services</html:link><br><br>
-<html:link action="/moviebook" > Movie Services</html:link><br><br>
+<p id="greet">Welcome emailId: <%=request.getSession().getAttribute("username")%></p><br>
+<br><br>
+<ul > 
+<li id="services"><html:link action="/busbook" ><img alt="busServices" src="images/busimage.jpg"></html:link><br><br></li>
+<li id="services"><html:link action="/moviebook" ><img alt="movieServices" src="images/movieimage.jpg"></html:link><br><br></li>
+</ul>
+<ul>
+<li id="capsrvices"><html:link action="/busbook" >Bus Services</html:link></li>
+<li id="capsrvices" class="movieServiceCaption"><html:link action="//moviebook" >Movie Services</html:link></li>
+</ul>
 </body>
 </html>

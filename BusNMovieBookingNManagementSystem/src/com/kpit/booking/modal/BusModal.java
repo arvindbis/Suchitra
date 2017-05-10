@@ -18,14 +18,16 @@ import com.kpit.booking.form.PassengerForm;
 
 public class BusModal {
 	public boolean addNewBusDetails(Connection connection, BusForm bus) {
-
+		if (bus.getBusName().equals("") | bus.getBusNumber().equals("")) {
+			return false;
+		}
 		int value = 0;
 		PreparedStatement preparedStatement;
 		try {
 			preparedStatement = connection.prepareStatement("INSERT INTO BUS VALUES(?,?,?,?)");
 			preparedStatement.setString(1, bus.getBusNumber());
 			preparedStatement.setString(2, bus.getBusName());
-			preparedStatement.setInt(3, bus.getNumberOfSeats());
+			preparedStatement.setInt(3, 40);
 			preparedStatement.setString(4, bus.getBusType());
 			value = preparedStatement.executeUpdate();
 		} catch (SQLException e) {
@@ -107,6 +109,9 @@ public class BusModal {
 	}
 
 	public boolean editBusDetails(Connection connection, BusForm bus) {
+		if (bus.getBusName().equals("")) {
+			return false;
+		}
 		int value = 0;
 		PreparedStatement preparedStatement;
 		System.out.println("EDIT");
@@ -347,11 +352,12 @@ public class BusModal {
 		
 	}
 
-	public void addSeatNumbers(Connection connection,String busno, List<String> list, List<Integer> pid, Date date) {
+	public boolean addSeatNumbers(Connection connection,String busno, List<String> list, List<Integer> pid, Date date) {
 		PreparedStatement preparedStatement;
 		Iterator<String> it=list.iterator();
 		String[] seats=new String[40];
 		int iter=0;
+		int  value = 0;
 		while(it.hasNext()){
 			seats[iter++]=it.next();
 		}
@@ -367,12 +373,19 @@ public class BusModal {
 				preparedStatement.setInt(3, passengerId);
 				java.sql.Date travelingDate = new java.sql.Date(date.getTime());
 				preparedStatement.setDate(4, travelingDate);
-				int value=preparedStatement.executeUpdate();
+				value=preparedStatement.executeUpdate();
 				System.out.println("UPDATE: "+value);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}
+		System.out.println(" "+value);
+		if(value>0){
+			return true;
+		}
+		else{
+			return false;
 		}
 	}
 

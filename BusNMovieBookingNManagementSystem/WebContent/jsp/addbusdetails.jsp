@@ -9,15 +9,11 @@
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+<script type="text/javascript" src="js/disablebrowserbackbutton.js"></script>
 </head>
-<%-- <jsp:include page="header.jsp"></jsp:include> --%>
+ <jsp:include page="header.jsp"></jsp:include>
 <body>
-<ul>
-
-
-<li id="headerdetails"><b id="mainheading">Bus and Movie Ticket Booking and Management System</b></li>
-
-</ul>
 <br><br><br><br><br><br>
 
 	<br>
@@ -27,7 +23,7 @@
 	<h4 id="addbusformheading">Add Bus Form</h4><br>
 	<html:form action="/newbusdetails" styleId="addbusform">
 		<bean:message key="label.addbus.busname" /> : 
-<html:text property="busName" size="20" styleId="idfornewbusname"/>
+<html:text property="busName" size="20" styleId="idfornewbusname" />
 
 		<br>
 		<br>
@@ -43,8 +39,8 @@
 		<br> --%>
 		<bean:message key="label.addbus.bustype" /> : 
 <html:select property="busType" styleId="idfornewbustype">
-			<html:option value="A/c Seater">A/c Seater</html:option>
-			<html:option value="Non A/c Seater">Non A/c Seater</html:option>
+			<html:option value="A/C Seater">A/C Seater</html:option>
+			<html:option value="Non A/C Seater">Non A/C Seater</html:option>
 			
 		</html:select>
 		<br>

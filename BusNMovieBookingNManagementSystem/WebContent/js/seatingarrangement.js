@@ -1,17 +1,29 @@
 $(document).ready(function() {
+	$("#femaleSeatIdentifier").css('background-color', 'brown');
+	$("#UnavailableSeatIdentifier").css('background-color', 'grey');
 	i=0;
 	var existSeat=new Array();
 	$("input[type='checkbox']").attr('checked', false);
 	
 	console.log($("input[type='hidden'] ").val());
 	var Seats=$("input[type='hidden'] ").val(); //Total number of seats already booked
+	
+	var females=$("input[type='hidden'][name='']").val();
+	
 	//for loop to get seata names
 	for(iter=0;iter<Seats;iter++){		
 			var value = "seatss" + iter;
 			console.log(value);
-			existSeat[i++] = $("input[type='hidden'][name='" + value + "']").val();
-			$(existSeat[i]).css('background-color', 'blue');
-			/*$("table tr").find("td").css('background-color','blue');*/
+			existSeat[i] = $("input[type='hidden'][name='" + value + "']").val();
+			coloringseat="#"+existSeat[i];
+			$(coloringseat).css('background-color', 'grey');
+			i++;
+			
+			var valuess = "females" + iter;
+			var fs=$("input[type='hidden'][name='" + valuess + "']").val();
+			console.log("FEMALEEEEEEEE"+fs);
+			var coloringFemaleSeats="#"+fs;
+			$(coloringFemaleSeats).css('background-color', 'brown');
 			    
 	}
 	console.log("existSeat"+i);

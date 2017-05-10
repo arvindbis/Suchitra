@@ -23,7 +23,7 @@ public class LogoutServlet extends HttpServlet {
 		HttpSession session=req.getSession();
 		session.invalidate();
 		Writer writer=response.getWriter();
-		writer.write("<p>Logout successful </p>");
+		writer.write("<p id='logoutmsg'>Logout successful </p>");
 				
 		}
 }

@@ -9,16 +9,12 @@
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+<script type="text/javascript" src="js/disablebrowserbackbutton.js"></script>
 </head>
-
+<jsp:include page="header.jsp"></jsp:include>
 <body>
-<ul>
-
-
-<li id="headerdetails"><b id="mainheading">Bus and Movie Ticket Booking and Management System</b></li>
-<li id="headerdetails"><form action="logout"><button id="logoutbutton">logout</button></form></li>
-</ul>
-<p id="greet"><br><br><br><br>Welcome Admin!....           your emailId : <%=request.getSession().getAttribute("username")%></p>
+<p id="greet">Welcome Admin!....           your emailId : <%=request.getSession().getAttribute("username")%></p>
 <br><br><br>
 <ul > 
 <li id="services"><html:link action="/busdetails" ><img alt="busServices" src="images/busimage.jpg"></html:link><br><br></li>

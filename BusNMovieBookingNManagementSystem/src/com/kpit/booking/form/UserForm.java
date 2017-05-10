@@ -3,13 +3,13 @@
  */
 package com.kpit.booking.form;
 
-import org.apache.struts.action.ActionForm;
+import org.apache.struts.validator.ValidatorForm;
 
 /**
  * @author suchitras
  *
  */
-public class UserForm extends /*ValidatorForm */ActionForm{
+public class UserForm extends ValidatorForm/* ActionForm*/{
 
 	/**
 	 * 

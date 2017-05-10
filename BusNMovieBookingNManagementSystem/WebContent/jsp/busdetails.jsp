@@ -12,6 +12,7 @@
 
 <title>Bus Details Page</title>
 <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+<script type="text/javascript" src="js/disablebrowserbackbutton.js"></script>
 <script type="text/javascript" src="js/busservices.js"></script>
 </head>
 <jsp:include page="header.jsp"></jsp:include>
@@ -76,8 +77,8 @@
 					<td>Bus Type</td>
 					<td><html:select property="busType">
 							
-							<html:option value="AC Seater">AC Seater</html:option>
-							<html:option value="Non AC Seater">Non AC Seater</html:option>
+							<html:option value="A/C Seater">A/C Seater</html:option>
+							<html:option value="Non A/C Seater">Non A/C Seater</html:option>
 						</html:select></td>
 				</tr>
 			</table>

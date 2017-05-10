@@ -19,6 +19,9 @@ public class SeatBookingAction extends Action{
 			HttpServletResponse response) throws Exception {
 		System.out.println("SEAT BOOKING ");
 		String noofseatsinString=request.getParameter("noofseatselectedbyuser");
+		if(noofseatsinString.isEmpty()){
+			return mapping.findForward("failure");
+		}
 		int noofSeats=Integer.parseInt(noofseatsinString);
 		request.setAttribute("numberOfSeats", noofSeats);
 		List<String> seatNumbers=new ArrayList<String>();

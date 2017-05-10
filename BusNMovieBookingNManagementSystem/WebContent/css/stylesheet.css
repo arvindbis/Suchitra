@@ -92,10 +92,11 @@ body {
 }
 
 #registrationsuccess {
-	color: green;
+	color: #ffffff;
 	font-size: 20pt;
-	margin-left: 300pt;
+	margin-left: 330pt;
 }
+
 
 #registerbutton {
 	color: white;
@@ -189,4 +190,79 @@ img {
 	margin-left: 71pt;
 	color: white;
 	background-color: rgba(255, 118, 0, 0.18);
+}
+/* #errormsg{
+	margin-left: 380pt;
+} */
+#busbookingform{
+	margin-left: 350pt;
+	border: medium;
+}
+#bussearchbutton{
+	margin-left: 65pt;
+	color: white;
+	background-color: rgba(255, 118, 0, 0.18);
+}
+#viewseat{
+	margin-left: 330pt;
+}
+#viewSelectedBusForBookingform{
+	margin-left: 390pt;
+}
+#viewseatbutton{
+	margin-left: 65pt;
+	color: white;
+	background-color: rgba(255, 118, 0, 0.18);
+}
+#seatsheading{
+	margin-left: 390pt;
+}
+#totalseatselectedheading{
+	margin-left: 390pt;
+}
+#noofseatselectedbyuser{
+	margin-left: 350pt;
+}
+#proceedbutton{
+	color: white;
+	background-color: rgba(255, 118, 0, 0.18);
+}
+#passengerdetailsform{
+	margin-left: 350pt;
+}
+#proceedbuttonforpassenger{
+	color: white;
+	background-color: rgba(255, 118, 0, 0.18);
+	margin-left: 80pt;
+}
+#passengerGender{
+	margin-left: 86pt;
+}
+#passengerAge{
+	margin-left: 102pt;
+}
+#passengerContact{
+	margin-left: 85pt;
+}
+#copassengername{
+	margin-left: 47pt;
+}
+#copassengerGender{
+	margin-left: 86pt;
+}
+#copassengerAge{
+	margin-left: 102pt;
+}
+#bookingsuccessmsg{
+	margin-left: 330pt;
+	font-size: 18pt;
+}
+#femaleSeatIdentifier{
+	height: 12pt;
+}
+#UnavailableSeatIdentifier{
+	height: 12pt;
+}
+#logoutmsg{
+	margin-left: 420pt;
 }
