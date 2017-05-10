@@ -13,4 +13,5 @@
 <p id="invalidbn">Invalid bus information</p>
 <jsp:include page="busdetails.jsp"></jsp:include>
 </body>
-</html>
+
+</html> 
