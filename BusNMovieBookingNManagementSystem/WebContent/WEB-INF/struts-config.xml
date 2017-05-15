@@ -10,6 +10,7 @@
 		<form-bean name="businfoaddForm" type="com.kpit.booking.form.BusForm" />
 		<form-bean name="registrationform" type="com.kpit.booking.form.UserRegistrationForm" />
 	 	<form-bean name="passengerForm" type="com.kpit.booking.form.PassengerForm" />
+	 	<form-bean name="movieForm" type="com.kpit.booking.form.MovieForm" />
 	</form-beans>
 
 	<action-mappings>
@@ -22,13 +23,12 @@
 		</action>
 
 
-		<!-- <action path="/busdetails" forward="/jsp/busdetails.jsp" /> -->
-		<action path="/moviedetails" forward="/jsp/moviedetails.jsp" />
+	
 
 
 		<action path="/newbusdetails" type="com.kpit.booking.action.AddBusAction"
 			name="businfoaddForm" input="/jsp/addbusdetails.jsp">
-			<!-- to do -->
+			
 			<forward name="success" path="/jsp/busdetails.jsp" />
 			<forward name="failure" path="/jsp/busdetailsfailure.jsp" />
 		</action>
@@ -38,7 +38,7 @@
 		<!-- doing -->
 		<action path="/busdetails" type="com.kpit.booking.action.BusInfoAction"
 			name="businfoaddForm" >
-			<!-- input="/jsp/busdetails.jsp" -->
+		
 			<forward name="buslist" path="/jsp/busdetails.jsp" />
 			
 		</action>
@@ -78,7 +78,7 @@
 		
 	<!-- FOR NORMAL USER -->
 	<action path="/busbook" forward="/jsp/busbooking.jsp" />
-	<action path="/moviebook" forward="/jsp/moviebooking.jsp" />
+	
 	
 	<action path="/busSearch" type="com.kpit.booking.action.BusSearchAction"
 		name="businfoaddForm">
@@ -103,8 +103,58 @@
 		<forward name="failure" path="/jsp/bookingfailure.jsp"></forward>
 	</action>
 
+	<!-- MOVIE BOOKING AND MANAGEMENT SYSTEM -->
+	<!-- ADMIN PART -->
+		<action path="/moviedetails" type="com.kpit.booking.action.MovieInfoAction"
+	name="movieForm">
+			<forward name="movielist" path="/jsp/moviedetails.jsp" />
+		</action>
 	
-
+	<action path="/addmoviedetails" forward="/jsp/addmoviedetails.jsp" />
+	<action path="/newmoviedetails" type="com.kpit.booking.action.AddMovieAction"
+			name="movieForm" input="/jsp/addmoviedetails.jsp">
+			<!-- to do -->
+			<forward name="success" path="/jsp/moviedetails.jsp" />
+			<forward name="failure" path="/jsp/moviedetailsfailure.jsp" />
+		</action>
+		
+		<action path="/deletemovieaction" type="com.kpit.booking.action.DeleteMovieInfoAction" 
+	name="movieForm" >
+			<forward name="succ" path="/jsp/moviedetails.jsp" />
+			<forward name="fail" path="/jsp/failureinmovieservices.jsp" />
+		</action>
+		
+		 <action path="/editmoviedetails" type="com.kpit.booking.action.EditMovieInfoAction" 
+	name="movieForm" >
+			<forward name="success" path="/jsp/moviedetails.jsp" />
+			<forward name="failure" path="/jsp/failureinmovieservices.jsp" />
+		</action>
+		
+		<!-- USER SIDE -->
+	<action path="/moviebook" forward="/jsp/moviebooking.jsp" />
+	<action path="/findmovie" type="com.kpit.booking.action.FindMovieAction"
+		name="movieForm">
+		<forward name="success" path="/jsp/foundmovies.jsp"></forward>
+		<forward name="failure" path="/jsp/notfoundmovies.jsp"></forward>
+	</action>
+	
+	<action path="/viewMovieSeats" type="com.kpit.booking.action.ViewMovieSeatAction"
+		name="movieForm">
+		<forward name="success" path="/jsp/movieseats.jsp" />
+    </action>
+    
+    <action path="/movieseatBooking" type="com.kpit.booking.action.MovieSeatBookingAction"
+		name="movieForm">
+		<forward name="customer" path="/jsp/customerdetails.jsp"></forward>
+		<forward name="failure" path="/jsp/moviebookingfailure.jsp"></forward>
+	</action>
+	
+	<action path="/customerDetails" type="com.kpit.booking.action.CustomerDetailsAction"
+		name="passengerForm">
+		<forward name="success" path="/jsp/moviebookingsuccess.jsp"></forward>
+		<forward name="failure" path="/jsp/moviebookingfailure.jsp"></forward>
+		<forward name="shownotexit" path="/jsp/shownotexit.jsp"></forward>
+	</action>
 	</action-mappings>
 
 

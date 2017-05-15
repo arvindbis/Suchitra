@@ -10,7 +10,7 @@ $(document).ready(function() {
 	
 	var females=$("input[type='hidden'][name='']").val();
 	
-	//for loop to get seata names
+	//for loop to get seatas names
 	for(iter=0;iter<Seats;iter++){		
 			var value = "seatss" + iter;
 			console.log(value);

@@ -266,3 +266,149 @@ img {
 #logoutmsg{
 	margin-left: 420pt;
 }
+#droppointbutton{
+	width: 100pt;	
+	color: white;
+	background-color: rgba(255, 118, 0, 0.18);
+	margin-left:20pt;
+}
+#pickuppointbutton{
+	width: 100pt;	
+	color: white;
+	background-color: rgba(255, 118, 0, 0.18);
+	margin-left:380pt;
+}
+#pickuppointtable,#droppointtable{
+	margin-left: 445pt;
+}
+#proceedbuttonafterpickupndropptselection{
+	color: white;
+	background-color: rgba(255, 118, 0, 0.18);
+	margin-left: 470pt;
+}
+
+/* MOVIE BOOKING AND MANAGEMENT SYSTEM */
+#moviebookingandmanagementsystem{
+ 	color: rgba(0, 0, 255, 0.52);
+	background-image: url("../images/bluebackgroundimage.jpg");
+	background-repeat: no-repeat;
+	background-size:200%;
+}
+#moviedateenteringform{
+	margin-left: 350pt;
+}
+#moviepic{
+	width: 220pt;
+}
+#searchmovie{
+	color:rgba(0, 0, 255, 0.52);
+	background-color: rgba(16, 0, 255, 0);
+}	
+#movienotfoundmsg{
+	margin-left: 400pt;
+	color: blue;
+	font-size:15pt
+}
+#foundmoviedetails{
+	margin-left: 400pt;
+}
+#adminmoviedetails{
+	margin-left: 350pt;
+	color:white;
+	background-color:rgba(0, 0, 255, 0.31);
+}
+#addMovieButton{
+	margin-left: 450pt;
+	color: white;
+	background-color: rgba(0, 0, 255, 0.31);
+}
+#deletemovieform {
+	margin-left: 400pt;
+	border-radius: 25px;
+}
+
+#deletemoviebutton {
+	margin-left: 80pt;
+	color: white;
+	background-color: rgba(0, 0, 255, 0.31);
+}
+
+#editmovieform {
+	margin-left: 400pt;
+	border-radius: 25px;
+}
+#movieeditformheading{
+	margin-left: 50pt;
+}
+#editmoviebutton {
+	margin-left: 80pt;
+	color: white;
+	background-color: rgba(0, 0, 255, 0.31);
+}
+#addmovieformheading{
+	margin-left: 420pt;
+}
+#addmovieform{
+	margin-left: 350pt;
+	border-radius: 25px;
+}
+#idfornewmoviesubmit{
+	margin-left: 100pt;
+	color: white;
+	background-color: rgba(0, 0, 255, 0.31);
+}
+#idfornewmoviename{
+	margin-left: 18pt;
+}
+#hiddenmovieID{
+	background-color: rgba(0, 119, 255, 0.15);
+}
+#idformoviebookingfailuremsg{
+	color: red;
+	margin-left:350pt;
+}
+#idforshowmoviebookingfailuremsg{
+	color: red;
+	margin-left:300pt;
+}
+#idformoviebookingsuccessemsg{
+	color:green;
+	margin-left:350pt;
+}
+#selectedmoviebox{
+	margin-left:420pt;
+}
+#showtimingselectiondiv{
+	margin-left:475pt;
+}
+#viewmovieseatbutton{
+	margin-left:490pt;
+	color:white;
+	background-color:rgba(0, 119, 255, 0.38);
+}
+#showtiming{
+	background-color: rgba(0, 119, 255, 0.52);
+	color:white;
+}
+#selecetedmoviename{
+	color:white;
+	background-color:rgba(0, 119, 255, 0.35);
+}
+#movieproceedbutton{
+	color:white;
+	background-color:rgba(0, 126, 255, 0.38);
+}
+#customerContact{
+	margin-left:82pt;
+}
+#cocustomername{
+	margin-left:37pt;
+}
+#proceedbuttonforcustomer{
+	color:white;
+	background-color:rgba(0, 0, 255, 0.22);
+	margin-left:90pt;
+}
+#customerdetailsform{
+	margin-left:400pt;
+}

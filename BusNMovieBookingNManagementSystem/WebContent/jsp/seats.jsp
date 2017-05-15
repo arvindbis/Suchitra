@@ -18,16 +18,7 @@
 </head>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
-	<!-- <table border="1" cellpadding="10">
-		<tr>
-			<th>Female Seats</th>
-			<td></td>
-		</tr>
-		<tr>
-			<th>Unavailable</th>
-			<td></td>
-		</tr>
-	</table> -->
+	
 	<p>Female Seats    <button id="femaleSeatIdentifier"></button></p>
 	<p>Unavailable    <button id="UnavailableSeatIdentifier"></button></p>
 <form >
@@ -72,7 +63,7 @@
 				name="check" /></td>
 			<td id="s33"><label> s33</label><br><input type="checkbox" value="None" id="s33" class="class"
 				name="check" /></td>
-			<td id="s37"><label id="s40"> s37</label><br><input type="checkbox" value="None" id="s37" class="class"
+			<td id="s37"><label> s37</label><br><input type="checkbox" value="None" id="s37" class="class"
 				name="check" /></td>
 		</tr>
 
@@ -166,7 +157,7 @@
 <html:form styleId="myform" action="seatBooking">
 
 <p id="seatsheading">Selected Seats are</p>
-	<table id="blacklistgrid">
+	<table >
 		
 			<tr id="Row1" >
 				<td class="space"></td>

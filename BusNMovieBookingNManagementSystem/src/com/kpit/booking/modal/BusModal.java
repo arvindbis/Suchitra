@@ -352,7 +352,7 @@ public class BusModal {
 		
 	}
 
-	public boolean addSeatNumbers(Connection connection,String busno, List<String> list, List<Integer> pid, Date date) {
+	public boolean addSeatNumbers(Connection connection,String busno, List<String> list, List<Integer> pid, Date date, String userSelectedPickPoint, String userSelectedDropPoint) {
 		PreparedStatement preparedStatement;
 		Iterator<String> it=list.iterator();
 		String[] seats=new String[40];
@@ -367,12 +367,14 @@ public class BusModal {
 		while(iterator.hasNext()){
 			int passengerId=iterator.next();
 			try {
-				preparedStatement=connection.prepareStatement("insert into seat_allocation values(?,?,?,?)");
+				preparedStatement=connection.prepareStatement("insert into seat_allocation values(?,?,?,?,?,?)");
 				preparedStatement.setString(1, busno);
 				preparedStatement.setString(2, seats[j++]);
 				preparedStatement.setInt(3, passengerId);
 				java.sql.Date travelingDate = new java.sql.Date(date.getTime());
 				preparedStatement.setDate(4, travelingDate);
+				preparedStatement.setString(5, userSelectedPickPoint);
+				preparedStatement.setString(6, userSelectedDropPoint);
 				value=preparedStatement.executeUpdate();
 				System.out.println("UPDATE: "+value);
 			} catch (SQLException e) {
@@ -387,6 +389,63 @@ public class BusModal {
 		else{
 			return false;
 		}
+	}
+
+	public List<String> findPickupPoints(Connection connection, String busno, String day, String routeID) {
+		List<String> pickupPoints=new ArrayList<String>();
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement("select location from bus_route_mapping where bus_number=? and day=? and route_id=? and type in('source','pickup')");
+			preparedStatement.setString(1, busno);
+			preparedStatement.setString(2, day);
+			preparedStatement.setString(3, routeID);
+			ResultSet rs=preparedStatement.executeQuery();
+			System.out.println("Pickup Points");
+			while(rs.next()){
+				pickupPoints.add(rs.getString("location"));
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return pickupPoints;
+	}
+
+	public List<String> findDroppingPoints(Connection connection, String busno, String day, String routeID) {
+		List<String> dropPoints=new ArrayList<String>();
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement("select location from bus_route_mapping where bus_number=? and day=? and route_id=? and type in('droppoint','destination')");
+			preparedStatement.setString(1, busno);
+			preparedStatement.setString(2, day);
+			preparedStatement.setString(3, routeID);
+			ResultSet rs=preparedStatement.executeQuery();
+			System.out.println("Dropping Points");
+			while(rs.next()){
+				dropPoints.add(rs.getString("location"));
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return dropPoints;
+	}
+
+	public String getRouteId(Connection connection, String fromAddress, String toAddress) {
+		String routeId = null;
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement("select route_id from route where source=? and destination=?");
+			preparedStatement.setString(1, fromAddress);
+			preparedStatement.setString(2, toAddress);
+			ResultSet rs=preparedStatement.executeQuery();
+			while(rs.next()){
+				routeId=rs.getString("route_id");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return routeId;
 	}
 
 	

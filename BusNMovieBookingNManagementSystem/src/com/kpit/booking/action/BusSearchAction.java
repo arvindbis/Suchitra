@@ -82,6 +82,9 @@ public class BusSearchAction extends Action {
 		    System.out.println(day+"  day");
 		    BusModal bus=new BusModal();
 		    ServletContext context=request.getServletContext();
+		    context.setAttribute("travelDay", day);
+		    context.setAttribute("travelFromAddress", fromAddress);
+		    context.setAttribute("travelToAddress", toAddress);
 		    Connection connection=(Connection) context.getAttribute("connection");
 		    List<String> busNumbers=new ArrayList<String>();
 		    busNumbers=bus.findBusNumbers(connection,fromAddress,toAddress,day);

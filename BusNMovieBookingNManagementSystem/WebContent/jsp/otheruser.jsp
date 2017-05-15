@@ -21,7 +21,7 @@
 </ul>
 <ul>
 <li id="capsrvices"><html:link action="/busbook" >Bus Services</html:link></li>
-<li id="capsrvices" class="movieServiceCaption"><html:link action="//moviebook" >Movie Services</html:link></li>
+<li id="capsrvices" class="movieServiceCaption"><html:link action="/moviebook" >Movie Services</html:link></li>
 </ul>
 </body>
 </html>

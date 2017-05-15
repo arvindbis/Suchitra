@@ -15,7 +15,20 @@ public class BusForm extends /*ValidatorForm*/ ActionForm{
 	 */
 	private List<BusForm> list;
 	private List<BusForm> foundbusdetails;
-	
+	private List<String> pickupPoints;
+	private List<String> droppingPoints;
+	public List<String> getPickupPoints() {
+		return pickupPoints;
+	}
+	public void setPickupPoints(List<String> pickupPoints) {
+		this.pickupPoints = pickupPoints;
+	}
+	public List<String> getDroppingPoints() {
+		return droppingPoints;
+	}
+	public void setDroppingPoints(List<String> droppingPoints) {
+		this.droppingPoints = droppingPoints;
+	}
 	public List<BusForm> getFoundbusdetails() {
 		return foundbusdetails;
 	}

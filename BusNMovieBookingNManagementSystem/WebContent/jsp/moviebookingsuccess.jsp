@@ -5,13 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-<script type="text/javascript" src="js/jquery-2.2.4.js"></script>
-<script type="text/javascript" src="js/disablebrowserbackbutton.js"></script>
 </head>
-<body>
-<p id="invalidbn">Sorry Failure</p>
-<jsp:include page="busdetails.jsp"></jsp:include>
+<body id="moviebookingandmanagementsystem">
+<h3 id="idformoviebookingsuccessemsg">Your booking is successful..Your reservation number is  <%=request.getAttribute("resevationid")%></h3>
+<jsp:include page="moviebooking.jsp"></jsp:include>
 </body>
-
-</html> 
+</html>

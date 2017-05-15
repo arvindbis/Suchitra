@@ -23,14 +23,7 @@ public class PassengerDetailsAction extends Action{
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 	System.out.println("IN PassengerDetailsAction");
-	/*String value="passengerName"+0;
-	String value1="passengerName"+1;
-	
-	
-	System.out.println(value+"    "+value1);
-	String name=request.getParameter(value);
-	String name1=request.getParameter(value1);
-	System.out.println(name+"      "+name1);*/
+
 	ServletContext context=request.getServletContext();
 	int noofseats=(Integer)context.getAttribute("numberOfSeats");
 	List<PassengerForm> passengers=new ArrayList<PassengerForm>();
@@ -64,14 +57,14 @@ public class PassengerDetailsAction extends Action{
 	System.out.println("TRAVELDATE  "+travelDate);
 	List<Integer> pid=new ArrayList<Integer>();
 	pid=bus.addPassengerDetails(connection,busno,travelDate,passengers);
-	
+	 
 	List<String> list=new ArrayList<String>();
 	list= (List<String>) context.getAttribute("seatNumbers");
 	String busnumber=(String) context.getAttribute("busno");
 	Date date=(Date) context.getAttribute("travelDate");
 	System.out.println(busnumber+"      busnumber date    "+date);
 	System.out.println(list);
-	boolean value=bus.addSeatNumbers(connection,busno,list,pid,date);
+
 	
 	
 	
@@ -81,6 +74,21 @@ public class PassengerDetailsAction extends Action{
 	}*/
 	/*BusForm busForm = (BusForm) form;
 	busForm.setSeatNumbers(selectedSeats);*/
+	
+	String userSelectedPickPoint=request.getParameter("userSelectedPickPoint");
+	String userSelectedDropPoint=request.getParameter("userSelectedDropPoint");
+	String fromAddress=(String) context.getAttribute("travelFromAddress");
+	String toAddress=(String) context.getAttribute("travelToAddress");
+	if(userSelectedPickPoint.equals("")){
+		userSelectedPickPoint=fromAddress;
+	}
+	if(userSelectedDropPoint.equals("")){
+		userSelectedDropPoint=toAddress;
+	}
+	System.out.println("userSelectedPickPoint"+userSelectedPickPoint+"\nuserSelectedDropPoint"+ userSelectedDropPoint);
+	boolean value=bus.addSeatNumbers(connection,busno,list,pid,date,userSelectedPickPoint,userSelectedDropPoint);
+	System.out.println("fromAddress"+fromAddress+" toAddress "+toAddress);
+	
 	if(value){
 		return mapping.findForward("success");
 	}
