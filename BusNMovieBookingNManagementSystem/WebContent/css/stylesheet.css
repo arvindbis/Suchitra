@@ -286,7 +286,14 @@ img {
 	background-color: rgba(255, 118, 0, 0.18);
 	margin-left: 470pt;
 }
-
+#withoutseatmsg{
+	margin-left:400pt;
+	font-size:15pt;
+}
+#nobusfoundmsg{
+	margin-left:400pt;
+	font-size:15pt;
+}
 /* MOVIE BOOKING AND MANAGEMENT SYSTEM */
 #moviebookingandmanagementsystem{
  	color: rgba(0, 0, 255, 0.52);

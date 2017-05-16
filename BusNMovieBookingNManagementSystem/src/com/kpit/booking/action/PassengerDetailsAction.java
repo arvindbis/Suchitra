@@ -23,9 +23,11 @@ public class PassengerDetailsAction extends Action{
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 	System.out.println("IN PassengerDetailsAction");
-
 	ServletContext context=request.getServletContext();
 	int noofseats=(Integer)context.getAttribute("numberOfSeats");
+	
+	
+	
 	List<PassengerForm> passengers=new ArrayList<PassengerForm>();
 	for(int iter=0;iter<noofseats;iter++){
 			PassengerForm passenger = new PassengerForm();

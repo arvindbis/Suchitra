@@ -5,11 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<script type="text/javascript" src="js/jquery-2.2.4.js"></script>
-<script type="text/javascript" src="js/disablebrowserbackbutton.js"></script>
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 </head>
 <body>
-<p id="nobusfoundmsg">No Bus Found</p>
+<p id="withoutseatmsg">Seats to be selected to book bus ticket</p>
 <jsp:include page="busbooking.jsp"></jsp:include>
 </body>
 </html>

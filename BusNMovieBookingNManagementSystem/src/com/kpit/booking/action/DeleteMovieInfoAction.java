@@ -16,9 +16,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import com.kpit.booking.form.BusForm;
 import com.kpit.booking.form.MovieForm;
-import com.kpit.booking.modal.BusModal;
 import com.kpit.booking.modal.MovieModal;
 
 /**

@@ -22,11 +22,18 @@ public class SeatBookingAction extends Action{
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		System.out.println("SEAT BOOKING ");
+		
 		String noofseatsinString=request.getParameter("noofseatselectedbyuser");
 		if(noofseatsinString.isEmpty()){
 			return mapping.findForward("failure");
 		}
 		int noofSeats=Integer.parseInt(noofseatsinString);
+		if(noofSeats==0){
+			return mapping.findForward("failure");
+		}
+		
+	
+		
 		request.setAttribute("numberOfSeats", noofSeats);
 		List<String> seatNumbers=new ArrayList<String>();
 		for(int iter=0;iter<noofSeats;iter++){
@@ -86,6 +93,7 @@ public class SeatBookingAction extends Action{
 		context.setAttribute("droppingPoints", droppingPoints);
 		busForm.setPickupPoints(pickupPoints);
 		busForm.setDroppingPoints(droppingPoints);
+		
 		return mapping.findForward("passengers");
 	}
 

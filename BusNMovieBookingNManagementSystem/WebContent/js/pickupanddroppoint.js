@@ -5,14 +5,20 @@ $(document).ready(function() {
 	$("#proceedbuttonafterpickupndropptselection").click(function(){
 		$("#passengerdetailsdiv").show();
 		$("#proceedbuttonforpassenger").show();
+		$("#pickuppointtable").hide();
+		$("#droppointtable").hide();
+		$("#proceedbuttonafterpickupndropptselection").hide();
 	});
 	
 	$("#pickuppointtable").hide();
 	$("#droppointtable").hide();
 	
 	$("#pickuppointbutton").click(function(){
+		$("#passengerdetailsdiv").hide();
+		$("#proceedbuttonforpassenger").hide();
 		$("#droppointtable").hide();
 		$("#pickuppointtable").show();
+		$("#proceedbuttonafterpickupndropptselection").show();
 		$("input[type='radio'][name='radioButtonForuserSelectedPickPoint']").click(function() {
 			
 			
@@ -25,8 +31,11 @@ $(document).ready(function() {
 		})
 	});
 	$("#droppointbutton").click(function(){
+		$("#passengerdetailsdiv").hide();
+		$("#proceedbuttonforpassenger").hide();
 		$("#droppointtable").show();
 		$("#pickuppointtable").hide();
+		$("#proceedbuttonafterpickupndropptselection").show();
 		$("input[type='radio'][name='radioButtonForuserSelectedDropPoint']").click(function() {
 			
 			

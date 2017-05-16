@@ -63,6 +63,7 @@ public class ViewSeatAction extends Action{
 		System.out.println("totalSeats :"+totalSeats);
 		request.setAttribute("totalSeats", totalSeats);
 		
+		
 		totalSeatsList=bus.getFemaleSeatNumbers(connection, busNumber,date);
 		totalSeatsList.addAll(bus.getMaleSeatNumbers(connection, busNumber,date));
 		
