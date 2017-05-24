@@ -29,11 +29,9 @@ public class ConnectionListener implements ServletContextListener{
 			dataSource = (DataSource)envContext.lookup("database");
 			connection = dataSource.getConnection();
 		} catch (NamingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.err.println("the NamingException is" + e);
 		}catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.err.println("the SQLException is" + e);
 		}
 		ServletContext context=arg0.getServletContext();
 		context.setAttribute("connection", connection);
